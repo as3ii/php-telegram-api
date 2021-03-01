@@ -9,7 +9,7 @@ if(isset($update["message"])) {
     $userID = $update["message"]["from"]["id"];
     $username = $update["message"]["from"]["username"];
     $name = addslashes($update["message"]["from"]["first_name"]);
-    if(isset($update["message"]["from"]["last_name"])) $cognome = addslashes($update["message"]["from"]["last_name"]);
+    if(isset($update["message"]["from"]["last_name"])) $last_name = addslashes($update["message"]["from"]["last_name"]);
     $isbot = $update["message"]["from"]["is_bot"];
     $lang = $update["message"]["from"]["language_code"];
     // chat
@@ -43,7 +43,7 @@ elseif(isset($update["edited_message"])) {
     $userID = $update["edited_message"]["from"]["id"];
     $username = $update["edited_message"]["from"]["username"];
     $name = addslashes($update["edited_message"]["from"]["first_name"]);
-    if(isset($update["edited_message"]["from"]["last_name"]))$cognome = addslashes($update["edited_message"]["from"]["last_name"]);
+    if(isset($update["edited_message"]["from"]["last_name"]))$last_name = addslashes($update["edited_message"]["from"]["last_name"]);
     $isbot = $update["edited_message"]["from"]["is_bot"];
     $lang = $update["edited_message"]["from"]["language_code"];
     // chat
@@ -81,7 +81,7 @@ elseif(isset($update["callback_query"])) {
     $msgID = $update["callback_query"]["message"]["message_id"];
     $username = $update["callback_query"]["from"]["username"];
     $name = addslashes($update["callback_query"]["from"]["first_name"]);
-    if(isset($update["callback_query"]["from"]["last_name"])) $cognome = addslashes($update["callback_query"]["from"]["last_name"]);
+    if(isset($update["callback_query"]["from"]["last_name"])) $last_name = addslashes($update["callback_query"]["from"]["last_name"]);
 }
 elseif(isset($update["inline_query"])) {
     $queryID = $update["inline_query"]["id"];
@@ -89,7 +89,7 @@ elseif(isset($update["inline_query"])) {
     $userID = $update["inline_query"]["from"]["id"];
     $username = $update["inline_query"]["from"]["username"];
     $nome = addslashes($update["inline_query"]["from"]["first_name"]);
-    if(isset($update["inline_query"]["from"]["last_name"])) $cognome = addslashes($update["inline_query"]["from"]["last_name"]);
+    if(isset($update["inline_query"]["from"]["last_name"])) $last_name = addslashes($update["inline_query"]["from"]["last_name"]);
     $lang = $update["inline_query"]["from"]["language_code"];
     // data
     $msg = addslashes($update["inline_query"]["query"]);
